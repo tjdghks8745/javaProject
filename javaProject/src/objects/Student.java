@@ -8,11 +8,11 @@ public class Student {
 	int eng;
 
 	// 생성자:필드값을 초기화 할 때 사용 보통
-	Student(String string, int i, int j) {
+	public Student() {
 		System.out.println("생성자를 호출합니다.");
 	}
 
-	Student(String studentNo) {
+	public Student(String studentNo) {
 		this.studentNo = studentNo;
 		
 	}
@@ -25,11 +25,11 @@ public class Student {
 	}
 
 	// 기능(메소드)
-	void study() {
+	public void study() {
 		System.out.println("공부합니다.");
 	}
 
-	void run() {
+	public void run() {
 		System.out.println("운동합니다.");
 	}
 
