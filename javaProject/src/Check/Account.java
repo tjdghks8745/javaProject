@@ -6,14 +6,12 @@ public class Account {
 	int balance;
 
 	public int getBalance() {
-		
+		return balance;
 	}
 
-	public void setBalance(int balance) {
-		if (MIN_BALANCE > balance) {
-			this.balance = 10000;
-		} else if (balance > MAX_BALANCE) {
-			this.balance = 10000;
+	public int setBalance(int balance) {
+		if (balance <= MAX_BALANCE && balance >= MIN_BALANCE)
+			return balance;
+		return balance;
 		}
-	}
 }
