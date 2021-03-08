@@ -14,10 +14,9 @@ public class MainExe {
 		dao = new EmpDAO();
 		Department[] detList = dao.detList();
 		for (Department det : detList) {
-			if(det != null) {
+			if (det != null) {
 				System.out.println(det.toString());
 			}
 		}
-
 	}
 }
