@@ -22,6 +22,7 @@ public class BoardMain {
 			System.out.print("선택> ");
 			menu = scn.nextInt();
 
+			
 			if (menu == 1) { // 입력
 				System.out.print("게시글 번호를 입력하세요> "); // 줄바꿈 전 입력 print
 				int boardNo = scn.nextInt();
