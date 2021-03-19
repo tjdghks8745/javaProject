@@ -11,3 +11,4 @@ public interface DAO {
 	public List<DiaryVO> selectALL();
 	
 }
+	

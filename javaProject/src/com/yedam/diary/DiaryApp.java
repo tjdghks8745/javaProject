@@ -60,6 +60,12 @@ public class DiaryApp {
 		case 전체조회:
 			selectAll();
 			break;
+		case 날짜검색:
+			selectDate();
+			break;
+		case 내용검색:
+			selectContent();
+			break;
 		}
 	}
 
@@ -90,9 +96,8 @@ public class DiaryApp {
 		DiaryVO vo = new DiaryVO();
 		vo.setWdate(wdate);
 		vo.setContents(contents);
-		int r = dao.update(vo);;
-		System.out.println(r + "건 입력완료.");
-	
+		dao.update(vo);
+	 
 	}
 
 	// 삭제
@@ -108,9 +113,30 @@ public class DiaryApp {
 	public void selectAll() {
 		System.out.println("전체조회선택>>");
 		for(DiaryVO vo:dao.selectALL()) {
-			System.out.println(vo.getWdate());
-			System.out.println(vo.getContents());
+			print(vo);
 		}
+	}
+	
+	//날짜로 검색
+	public void selectDate() {
+		System.out.println("날짜검색>>");
+		System.out.println("날짜: [yyMMdd]");
+		String wdate = StdInputUtil.readDate();
+		DiaryVO vo = dao.selectDate(wdate);
+		System.out.println(vo.getWdate());
+		System.out.println(vo.getContents());
+		print(vo);
+	}
+	//내용 검색
+	public void selectContent() {
+		System.out.println("내용검색>>");	
+		
+		
+	}
+	public void print(DiaryVO vo) {
+		System.out.println("날짜는 : " + vo.getWdate());
+		System.out.println("내용은 : " + vo.getContents());
+		System.out.println("==============================");
 	}
 
 	// 종료

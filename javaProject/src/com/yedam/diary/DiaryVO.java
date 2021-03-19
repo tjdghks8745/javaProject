@@ -8,6 +8,9 @@ public class DiaryVO implements Serializable {
 	private String wdate;
 	private String contents;
 
+	public DiaryVO(String string, String string2) {
+	}
+
 	public String getWdate() {
 		return wdate;
 	}
